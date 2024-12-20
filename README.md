@@ -9,7 +9,7 @@ Currently, two official plugins are available:
 
 
 
-https://www.youtube.com/watch?v=Pfy3q6PbbRA    40.46
+https://www.youtube.com/watch?v=Pfy3q6PbbRA    45:37
 
 
 imagekit.io  for all images 

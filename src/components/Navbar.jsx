@@ -1,6 +1,11 @@
 import { useState } from "react";
 import Image from "./Image";
 import { Link } from "react-router-dom";
+import {
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/clerk-react";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -27,10 +32,18 @@ const Navbar = () => {
             open ? "-right-0" : "-right-[100%]"
           }`}
         >
-          <Link to="/" className="">Home</Link>
-          <Link to="/" className="">Trending</Link>
-          <Link to="/" className="">Most Popular</Link>
-          <Link to="/" className="">About</Link>
+          <Link to="/" className="">
+            Home
+          </Link>
+          <Link to="/" className="">
+            Trending
+          </Link>
+          <Link to="/" className="">
+            Most Popular
+          </Link>
+          <Link to="/" className="">
+            About
+          </Link>
           <Link to="/login" className="">
             <button className="py-2 px-4 rounded-lg bg-blue-800 text-white">
               Login
@@ -41,15 +54,29 @@ const Navbar = () => {
 
       {/* Desktop  Menu */}
       <div className="hidden md:flex items-center gap-8 xl-gap-12 font-medium">
-        <Link to="/" className="">Home</Link>
-        <Link to="/" className="">Trending</Link>
-        <Link to="/" className="">Most Popular</Link>
-        <Link to="/" className="">About</Link>
-        <Link to="/login" className="">
-          <button className="py-2 px-4 rounded-lg bg-blue-800 text-white">
-            Login
-          </button>
+        <Link to="/" className="">
+          Home
         </Link>
+        <Link to="/" className="">
+          Trending
+        </Link>
+        <Link to="/" className="">
+          Most Popular
+        </Link>
+        <Link to="/" className="">
+          About
+        </Link>
+
+        <SignedOut>
+          <Link to="/login" className="">
+            <button className="py-2 px-4 rounded-lg bg-blue-800 text-white">
+              Login
+            </button>
+          </Link>
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
       </div>
     </div>
   );
